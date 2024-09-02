@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Giao diện Máy tính</title>
+    <style>
+        .calculator {
+            width: 300px;
+            padding: 20px;
+            margin: 50px auto;
+            background-color: #cce7f0;
+            border-radius: 8px;
+            text-align: left;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .calculator h2 {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        .calculator label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        .calculator input[type="text"] {
+            width: calc(100% - 10px);
+            padding: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .calculator input[type="button"] {
+            width: 60px;
+            padding: 5px;
+            margin: 5px;
+            border: 1px solid #007bff;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+        .calculator input[type="button"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="calculator">
+    <h2>Máy tính</h2>
+    <form>
+        <label for="number1">Số thứ nhất</label>
+        <input type="text" id="number1" placeholder="Nhập số thứ nhất">
+        
+        <label for="number2">Số thứ hai</label>
+        <input type="text" id="number2" placeholder="Nhập số thứ hai">
+        
+        <input type="button" value="Cộng">
+        <input type="button" value="Trừ">
+        <input type="button" value="Nhân">
+        <input type="button" value="Chia">
+        
+        <label for="result">Kết quả</label>
+        <input type="text" id="result" placeholder="Kết quả" readonly>
+    </form>
+</div>
+
+</body>
+</html>
