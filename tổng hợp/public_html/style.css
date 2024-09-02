@@ -1,0 +1,43 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 90%;
+    text-align: center;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    color: #8B0000;
+}
+
+.TKWeb {
+    background-color: #a2d5a5;
+}
+
+.HDH {
+    background-color: #add8e6;
+}
+
+.CSDL {
+    background-color: #f4cccc;
+}
+
+.LTĐT {
+    background-color: #ffe599;
+}
+
+.TKCSDL {
+    background-color: #c9daf8;
+}
