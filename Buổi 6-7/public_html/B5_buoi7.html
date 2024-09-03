@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5 - Thực Đơn Tính Tiền</title>
+    <style>
+        body {
+            background-color: #CCFF66;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        table {
+            margin: auto;
+            border: 2px solid green;
+            padding: 10px;
+            background-color: #CCFF33;
+        }
+        th {
+            background-color: #99CC00;
+            color: white;
+            padding: 5px;
+        }
+        select, input {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>THỰC ĐƠN</h2>
+    <table>
+        <tr>
+            <th>Thức ăn</th>
+            <th>Nước uống</th>
+            <th>Thời điểm</th>
+        </tr>
+        <tr>
+            <td>
+                <select id="food">
+                    <option value="20000">Bún bò</option>
+                    <option value="15000">Hủ tiếu</option>
+                    <option value="30000">Bánh canh</option>
+                    <option value="25000">Phở bò</option>
+                    <option value="18000">Nuôi</option>
+                    <option value="22000">Bánh mì thịt</option>
+                    <option value="15000">Bánh cuốn</option>
+                </select>
+            </td>
+            <td>
+                <select id="drink">
+                    <option value="10000">Cà phê đá</option>
+                    <option value="12000">Cà phê sữa đá</option>
+                    <option value="8000">Chanh dây</option>
+                    <option value="6000">Chanh muối</option>
+                    <option value="5000">Xí muội</option>
+                    <option value="7000">Sữa tươi</option>
+                    <option value="10000">Cam vắt</option>
+                </select>
+            </td>
+            <td>
+                <input type="radio" name="time" value="Ban ngày" checked> Ban ngày<br>
+                <input type="radio" name="time" value="Ban đêm"> Ban đêm
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <button onclick="calculateTotal()">Tính tiền</button>
+            </td>
+        </tr>
+    </table>
+
+    <p id="result"></p>
+
+    <script>
+        function calculateTotal() {
+            var foodPrice = parseInt(document.getElementById("food").value);
+            var drinkPrice = parseInt(document.getElementById("drink").value);
+            var total = foodPrice + drinkPrice;
+
+            var time = document.querySelector('input[name="time"]:checked').value;
+            var message = `Tổng tiền cho món ăn và nước uống vào ${time} là: ${total} VND`;
+
+            document.getElementById("result").innerText = message;
+        }
+    </script>
+
+</body>
+</html>

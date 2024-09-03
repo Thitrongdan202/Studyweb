@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4</title>
+    <style>
+        body {
+            background-color: #FFD1DC;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        table {
+            margin: auto;
+            border: 2px solid purple;
+            padding: 10px;
+            background-color: #FFCCFF;
+        }
+        input, select, button {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Bài 4: Xuất Thứ Trong Tuần</h2>
+    <table>
+        <tr>
+            <td>Ngày</td>
+            <td><input type="number" id="day" value="12"></td>
+        </tr>
+        <tr>
+            <td>Tháng</td>
+            <td>
+                <select id="month">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Năm</td>
+            <td><input type="number" id="year" value="2015"></td>
+        </tr>
+        <tr>
+            <td colspan="2"><button onclick="calculateDay()">Xuất thứ</button></td>
+        </tr>
+    </table>
+
+    <p id="result"></p>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
+    <script>
+        function calculateDay() {
+            var day = parseInt($("#day").val());
+            var month = parseInt($("#month").val());
+            var year = parseInt($("#year").val());
+
+            var startDate = new Date(1970, 0, 1); // 1/1/1970 là thứ 5
+            var inputDate = new Date(year, month - 1, day);
+            var dayDifference = Math.floor((inputDate - startDate) / (1000 * 60 * 60 * 24));
+
+            var daysOfWeek = ['Chủ nhật', 'Thứ 2', 'Thứ 3', 'Thứ 4', 'Thứ 5', 'Thứ 6', 'Thứ 7'];
+            var dayOfWeek = (dayDifference + 4) % 7; // +4 để đưa về thứ 5 từ thứ 0
+            var resultText = `${daysOfWeek[dayOfWeek]} Ngày ${day} tháng ${month} năm ${year}`;
+
+            $("#result").text(resultText);
+        }
+    </script>
+
+</body>
+</html>
