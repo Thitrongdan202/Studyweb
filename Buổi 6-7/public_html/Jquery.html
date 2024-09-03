@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
+ 
+<script>
+
+$(document).ready(function(){
+
+    $(".delete").click(function(){
+
+		$(this).parent().parent().remove();
+
+	});
+ 
+});
+</script>
+</head>
+<body>
+<table>
+<tr>
+<td>Alfreds Futterkiste</td>
+<td>Maria Anders</td>
+<td>Germany</td>
+<td><button class='delete'>Xóa</button></td>
+</tr>
+<tr>
+<td>Centro comercial Moctezuma</td>
+<td>Francisco Chang</td>
+<td>Mexico</td>
+<td><button class='delete'>Xóa</button></td>
+</tr>
+</table>
+</body>
+</html>
+
+ 
+<script>
+
+$(document).ready(function(){
+
+    $(".mua").click(function(){
+
+		str=$(this).attr('gia');
+
+        alert(str);
+
+	});
+ 
+});
+</script>
+</head>
+<body>
+<img src=''><br>
+<button class='mua' gia='1000'>Mua</button>
+</body>
+ 
+<script>
+
+$(document).ready(function(){
+
+    $(".user").blur(function(){
+
+		str=$(this).val();
+
+        alert(str);
+
+	});
+ 
+});
+</script>
+</head>
+<body>
+<input type='text' class='user'></input>
+</body>
+</html>
+
+ <script>
+
+$(document).ready(function(){
+
+    $(".monan").change(function(){
+
+		str=$(this).val();
+
+        alert(str);
+
+	});
+ 
+});
+</script>
+</head>
+<body>
+<select class='monan'>
+<option value='xoai'> Xoài</option>
+<option value='oi'> Ổi</option>
+<option value='dau'> Đậu</option>
+</select>
+</body>
+ 
+
+<script>
+
+$(document).ready(function(){
+
+    $(".monan").change(function(){
+
+		str=$(this).val();
+
+        alert(str);
+
+	});
+ 
+	$('input').keyup(function(e){
+
+     	if(e.keyCode == 13)
+
+     	{
+
+			str = $(this).val();
+
+       	 	alert(str);
+
+     	}
+
+   });
+ 
+});
+</script>
+</head>
+<body>
+<select class='monan'>
+<option value='xoai'> Xoài</option>
+<option value='oi'> Ổi</option>
+<option value='dau'> Đậu</option>
+</select>
+<br>
+<input type='text'></input>
+</body>
+ 

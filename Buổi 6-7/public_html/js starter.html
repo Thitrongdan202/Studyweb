@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập Switch</title>
+</head>
+<body>
+
+<h2>Kiểm tra số ngày trong tháng</h2>
+
+<script>
+    // Khai báo biến tháng và năm
+    let thang = 2; // Bạn có thể thay đổi giá trị để kiểm tra
+    let nam = 2024; // Bạn có thể thay đổi giá trị để kiểm tra
+
+    // Biến để lưu số ngày của tháng
+    let soNgay;
+
+    // Sử dụng switch để xác định số ngày trong tháng
+    switch (thang) {
+        case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+            soNgay = 31;
+            break;
+        case 4: case 6: case 9: case 11:
+            soNgay = 30;
+            break;
+        case 2:
+            // Kiểm tra năm nhuận
+            if ((nam % 4 === 0 && nam % 100 !== 0) || (nam % 400 === 0)) {
+                soNgay = 29; // Năm nhuận
+            } else {
+                soNgay = 28; // Năm không nhuận
+            }
+            break;
+        default:
+            soNgay = "Không hợp lệ"; // Trường hợp tháng không hợp lệ
+    }
+
+    // Xuất kết quả ra màn hình
+    document.write(`Tháng ${thang} năm ${nam} có ${soNgay} ngày.`);
+</script>
+
+</body>
+</html>
