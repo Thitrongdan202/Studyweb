@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập tính tổng số ngày</title>
+</head>
+<body>
+
+<h2>Tính tổng số ngày từ đầu năm</h2>
+
+<script>
+    // Khởi gán giá trị cho 3 biến
+    let ngay = 21;
+    let thang = 7;
+    let nam = 2024;
+
+    // Hàm kiểm tra năm nhuận
+    function kiemTraNamNhuan(nam) {
+        return (nam % 4 === 0 && nam % 100 !== 0) || (nam % 400 === 0);
+    }
+
+    // Xác định số ngày của từng tháng
+    let soNgayTrongThang;
+    let tongSoNgay = 0;
+
+    // Sử dụng switch case để tính tổng số ngày từ đầu năm đến tháng trước tháng hiện tại
+    for (let i = 1; i < thang; i++) {
+        switch (i) {
+            case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+                soNgayTrongThang = 31;
+                break;
+            case 4: case 6: case 9: case 11:
+                soNgayTrongThang = 30;
+                break;
+            case 2:
+                // Tháng 2 tùy thuộc vào năm nhuận hay không
+                soNgayTrongThang = kiemTraNamNhuan(nam) ? 29 : 28;
+                break;
+            default:
+                soNgayTrongThang = 0; // Trường hợp tháng không hợp lệ
+        }
+        // Cộng dồn số ngày của từng tháng vào tổng số ngày
+        tongSoNgay += soNgayTrongThang;
+    }
+
+    // Cộng thêm số ngày của tháng hiện tại
+    tongSoNgay += ngay;
+
+    // Xuất kết quả ra màn hình
+    document.write(`Từ đầu năm ${nam} đến ngày ${ngay}/${thang} có tổng cộng ${tongSoNgay} ngày.`);
+</script>
+
+</body>
+</html>
