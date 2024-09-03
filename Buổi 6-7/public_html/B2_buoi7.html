@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính Lương Tháng</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
+    <style>
+        table {
+            border: 2px solid purple;
+            padding: 10px;
+            margin: 20px auto;
+            background-color: #FFDCA8;
+        }
+        input, select, button {
+            padding: 5px;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+<table>
+    <tr>
+        <td>Lương</td>
+        <td><input type="number" id="luong" value="1000000"></td>
+    </tr>
+    <tr>
+        <td>Hệ số lương</td>
+        <td>
+            <select id="hesoluong">
+                <option value="1.0">1.0</option>
+                <option value="2.0">2.0</option>
+                <option value="3.0">3.0</option>
+                <option value="3.2" selected>3.2</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" align="center">
+            <button id="tinhLuong">Tính lương tháng</button>
+        </td>
+    </tr>
+    <tr>
+        <td>Lương tháng</td>
+        <td><input type="text" id="luongthang" readonly></td>
+    </tr>
+</table>
+
+<script>
+    $(document).ready(function() {
+        $('#tinhLuong').click(function() {
+            // Lấy giá trị của lương và hệ số lương
+            var luong = parseFloat($('#luong').val());
+            var hesoluong = parseFloat($('#hesoluong').val());
+
+            // Tính lương tháng
+            var luongthang = luong * hesoluong;
+
+            // Hiển thị kết quả vào ô Lương tháng
+            $('#luongthang').val(luongthang);
+        });
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập Tìm thứ trong tuần</title>
+</head>
+<body>
+
+<h2>Tìm thứ trong tuần của ngày 21/7/2024</h2>
+
+<script>
+    // Khởi gán giá trị cho 3 biến
+    let ngay = 21;
+    let thang = 7;
+    let nam = 2024;
+
+    // Hàm kiểm tra năm nhuận
+    function kiemTraNamNhuan(nam) {
+        return (nam % 4 === 0 && nam % 100 !== 0) || (nam % 400 === 0);
+    }
+
+    // Tính tổng số ngày từ 1/1/1970 đến ngày 21/7/2024
+    let tongSoNgay = 0;
+
+    // Tính số ngày từ năm 1970 đến năm trước năm 2024
+    for (let i = 1970; i < nam; i++) {
+        tongSoNgay += kiemTraNamNhuan(i) ? 366 : 365;
+    }
+
+    // Tính số ngày từ tháng 1 đến tháng trước tháng 7 năm 2024
+    for (let i = 1; i < thang; i++) {
+        switch (i) {
+            case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+                tongSoNgay += 31;
+                break;
+            case 4: case 6: case 9: case 11:
+                tongSoNgay += 30;
+                break;
+            case 2:
+                tongSoNgay += kiemTraNamNhuan(nam) ? 29 : 28;
+                break;
+        }
+    }
+
+    // Cộng thêm số ngày trong tháng 7 năm 2024
+    tongSoNgay += ngay;
+
+    // Tính thứ của ngày 21/7/2024
+    let thuTrongTuan = (tongSoNgay + 3) % 7; // Thêm 3 vì ngày 1/1/1970 là thứ 5
+
+    // Xác định tên của ngày
+    let thu;
+    switch (thuTrongTuan) {
+        case 0:
+            thu = "Chủ Nhật";
+            break;
+        case 1:
+            thu = "Thứ Hai";
+            break;
+        case 2:
+            thu = "Thứ Ba";
+            break;
+        case 3:
+            thu = "Thứ Tư";
+            break;
+        case 4:
+            thu = "Thứ Năm";
+            break;
+        case 5:
+            thu = "Thứ Sáu";
+            break;
+        case 6:
+            thu = "Thứ Bảy";
+            break;
+    }
+
+    // Xuất kết quả
+    document.write(`Ngày ${ngay}/${thang}/${nam} là ${thu}.`);
+</script>
+
+</body>
+</html>
