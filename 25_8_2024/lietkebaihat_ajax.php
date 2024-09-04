@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <script src="jquery.js"></script>
+        <script>
+            $(document).ready(function(){
+                $(".delete").click(function(){
+                    var mabaihat=$(this).attr('mabaihat');
+                    $.post("deletebaihat_ajax.php",
+                    {
+                        mabaihat:mabaihat 
+                    },
+                    function(data,status){   
+                    }); 
+                    $(this).parent().parent().remove();
+                });
+            });   
+        </script>
+    </head>
+    <body>
+        <?php
+            include "connect.php";
+            $sql = "SELECT * FROM baihat";
+            $results = $connect->query($sql);
+            echo "<table border='1'>";
+            echo "<tr><th>Mã bài hát</th><th>Tên bài hát</th><th>Chức năng</th></tr>";
+            while($rows = $results->fetch_row())
+            {
+                echo "<tr>";
+                    echo "<td>$rows[0]</td>";
+                    echo "<td>$rows[1]</td><td><a href='viewbaihat.php?mabaihat=$rows[0]'>View</a> ";
+                    echo "<button mabaihat=$rows[0] class='delete'> Delete</button></td>";
+                echo "</tr>";
+            }
+            echo "</table>";
+            $connect->close();
+        ?>
+    </body>
+</html>
