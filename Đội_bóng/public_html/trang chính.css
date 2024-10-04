@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.divider {
+    border-bottom: 1px solid #e5e7eb;
+    margin: 20px 0;
+}
+
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.stats-section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.stat-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 23%;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.stat-card h3 {
+    font-size: 16px;
+    color: #4a5568;
+    margin-bottom: 10px;
+}
+
+.stat-number {
+    font-size: 28px;
+    font-weight: bold;
+    color: #2d3748;
+}
+
+.logo-card img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+}
+
+.charts-section {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sales-chart,
+.statistics-chart {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 48%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sales-chart h3,
+.statistics-chart h3 {
+    font-size: 18px;
+    color: #4a5568;
+    margin-bottom: 15px;
+}
+
+#sales-bar-chart,
+#stats-donut-chart {
+    width: 100%;
+    height: 300px;
+}
